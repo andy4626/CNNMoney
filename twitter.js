@@ -11,7 +11,6 @@ var tweets_to_display=[];
 
 var params = {screen_name: 'cnnmoney',count: 15};
 client.get('statuses/user_timeline', params, function(error, tweets, response) {
-  // console.log(error);
   if (!error) {
   	tweets.forEach(function(oneItem){
   		var infos = {
@@ -24,12 +23,7 @@ client.get('statuses/user_timeline', params, function(error, tweets, response) {
   		};
   		tweets_to_display.push(infos);
   	})
-  	// console.log(tweets[0].created_at);
-  	// console.log(tweets[0].text);
-  	// console.log(tweets[0].user.screen_name);
-    // tweets_to_display.push(tweets);
   }
-  // console.log(tweets_to_display);
 });
 
 module.exports = tweets_to_display;
