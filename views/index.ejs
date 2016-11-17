@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>CNNMoney Test</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+  	<ul>
+  		<% for(var i = 0; i < tweetdata.length; i++){ %>
+  			<li class="container">
+	        <figure class="author-container">
+            <div class="pic-container">
+              <img class="author-pic " src="<%= tweetdata[i].profile_image%>">
+            </div>
+            <div class="content-container">
+              <span class="author-name"><%= tweetdata[i].screen_name%></span>
+              <span class="grey-name">@<%= tweetdata[i].screen_name%> &middot;</span>
+    	        <span class="created-at"><%= new Date(tweetdata[i].created_at).toLocaleDateString();%></span>
+  			      <article class="content"><%= tweetdata[i].content%></article>
+            </div>
+          </figure>
+          <div class="bottom-container">
+	    	    <div class="reply"><i class="fa fa-mail-reply"></i></div>
+            <div class="retweet"><i class="fa fa-retweet"> <%= tweetdata[i].retweets%></i></div>
+	    	    <div class="likes"><i class="fa fa-heart"> <%= tweetdata[i].likes%></i></div>
+            <div class="more"><i class="fa material-icons">&#xe5d3;</i></div>
+          </div>
+        </li>
+  		<% } %>
+  	</ul>
+  </body>
+</html>
