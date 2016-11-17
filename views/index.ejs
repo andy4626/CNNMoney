@@ -8,28 +8,28 @@
     <link rel='stylesheet' href='/stylesheets/style.css' />
   </head>
   <body>
-  	<ul>
-  		<% for(var i = 0; i < tweetdata.length; i++){ %>
-  			<li class="container">
-	        <figure class="author-container">
-            <div class="pic-container">
-              <img class="author-pic " src="<%= tweetdata[i].profile_image%>">
-            </div>
-            <div class="content-container">
-              <span class="author-name"><%= tweetdata[i].screen_name%></span>
-              <span class="grey-name">@<%= tweetdata[i].screen_name%> &middot;</span>
-    	        <span class="created-at"><%= new Date(tweetdata[i].created_at).toLocaleDateString();%></span>
-  			      <article class="content"><%= tweetdata[i].content%></article>
-            </div>
+    <ul>
+      <% for(var i = 0; i < tweetdata.length; i++){ %>
+        <li class="container">
+          <figure class="author-container">
+          <div class="pic-container">
+            <img class="author-pic " src="<%= tweetdata[i].profile_image%>">
+          </div>
+          <div class="content-container">
+            <span class="author-name"><%= tweetdata[i].screen_name%></span>
+            <span class="grey-name">@<%= tweetdata[i].screen_name%> &middot;</span>
+            <span class="created-at"><%= new Date(tweetdata[i].created_at).toLocaleDateString();%></span>
+            <article class="content"><%= tweetdata[i].content%></article>
+          </div>
           </figure>
           <div class="bottom-container">
-	    	    <div class="reply"><i class="fa fa-mail-reply"></i></div>
+            <div class="reply"><i class="fa fa-mail-reply"></i></div>
             <div class="retweet"><i class="fa fa-retweet"> <%= tweetdata[i].retweets%></i></div>
-	    	    <div class="likes"><i class="fa fa-heart"> <%= tweetdata[i].likes%></i></div>
+            <div class="likes"><i class="fa fa-heart"> <%= tweetdata[i].likes%></i></div>
             <div class="more"><i class="fa material-icons">&#xe5d3;</i></div>
           </div>
         </li>
-  		<% } %>
-  	</ul>
-  </body>
+      <% } %>
+    </ul>
+</body>
 </html>
